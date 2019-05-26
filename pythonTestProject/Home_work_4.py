@@ -46,10 +46,10 @@ def sum_1(args):
     return total
 
 
-a = [1, 7, 12]
+a = [1, 7, 15]
 sum_elem = 0
 for i in range(len(a)):
-    if sum_1(tuple(bin(a[i]))) % 2 == 0:
+    if sum_1(bin(a[i])) % 2 == 0:
         sum_elem += a[i]
 
 print(count_result(a, sum_elem))
