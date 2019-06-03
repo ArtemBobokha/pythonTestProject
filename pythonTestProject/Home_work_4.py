@@ -33,30 +33,26 @@ swap(target_list, item_index1, item_index2)
 
 # _____________________________________________2___________________________________________________-
 
-def count_result(arr, sum_elements):
-    result = sum_elements * arr[-2]
-    return result
+a = [1, 2, 3, 4]  # результат 15
+total = 0
 
 
 def sum_1(args):
-    total = 0
+    total1 = 0
     for i in range(len(args)):
         if args[i] == '1':
-            total += 1
-    return total
+            total1 += 1
+    return total1
 
 
+for j in range(len(a)):
+    print(j)
+    if sum_1(bin(j)) % 2 == 0:
+        total += a[j]
 
-a = [1, 7, 15]
-sum_elem = 0
-for i in range(len(a)):
-    if sum_1(bin(a[i])) % 2 == 0:
-        sum_elem += a[i]
+print(total * a[-2])
 
-print(count_result(a, sum_elem))
-
-
-# ________________________________________________3(a,b,c)__________________________________________________
+# _______________________________________________3(a,b,c)__________________________________________________
 import string
 a = 'dkjfh12'
 litters = 'qwertyuipasdfghjklzxcvbnm'
