@@ -79,3 +79,37 @@ password_validator(a)
 
 
 # _____________________________________________________4_________________________________________________________
+
+def sort_Atmos(a):
+   flag = None
+   for i in range(0, len(a)):
+      for j in range(0, len(a) - 1):
+         if a[j]["price"] == None:
+            continue
+         if a[i]["price"] == None:
+            flag = a[-1]
+            a[-1] = a[i]
+            a[i] = flag
+         elif a[i]["price"] > a[j]["price"]:
+            flag = a[j]
+            a[j] = a[i]
+            a[i] = flag
+   return a
+
+
+if __name__ == "__main__":
+    autos = [
+        {"brand": "Ford", "model": "Mustang", "year": 1964, "price": 4000},
+        {"brand": "Ford", "model": "Mondeo", "year": 1999, "price": 3000},
+        {"brand": "Ford", "model": "Fiesta", "year": 2003, "price": 4200},
+        {"brand": "Nissan", "model": "Primera", "year": 1997, "price": 3100},
+        {"brand": "BMW", "model": "X3", "year": 2001, "price": 5000},
+        {"brand": "Nissan", "model": None, "year": 1964, "price": None},
+        {"brand": "VW", "model": "Passat", "year": 1996, "price": 1200},
+        {"brand": "BMW", "model": "X5", "year": 2010, "price": 7500},
+        {"brand": "Renault", "model": "Megane", "year": 1999, "price": 2300}
+    ]
+    repl_Autos = autos[:]
+    print(sort_Atmos(repl_Autos))
+    lambda_sort_Atmos = sorted(list(filter(lambda x: x["price"] is not None, autos)), key=lambda y: y["price"], reverse=True)
+    print(lambda_sort_Atmos)
